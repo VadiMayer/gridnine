@@ -17,4 +17,5 @@ public class Flight {
         return segments.stream().map(Object::toString)
                 .collect(Collectors.joining(" "));
     }
+
 }
