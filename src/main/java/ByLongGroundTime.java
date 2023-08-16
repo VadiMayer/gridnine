@@ -16,12 +16,12 @@ public class ByLongGroundTime implements Filter {
                 .filter(flight -> {
 
                     LocalDateTime arrival = null;
-                    long groundTime = 0;
+                    int groundTime = 0;
 
                     for (Segment segment : flight.getSegments()) {
 
                         if (arrival != null) {
-                            groundTime += Duration.between(arrival, segment.getDepartureDate()).toHours();
+                            groundTime += (int) Duration.between(arrival, segment.getDepartureDate()).toHours();
                         }
 
                         arrival = segment.getArrivalDate();

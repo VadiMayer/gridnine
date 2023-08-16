@@ -10,7 +10,7 @@ public class Filters {
 
     public List<Flight> filter(List<Flight> flights, Filter howToFilter) {
         for(Filter filter : filters) {
-            if (filter.getClass().equals(howToFilter.getClass())) {
+            if (filter.getClass().getName().equals(howToFilter.getClass().getName())) {
                 flights = filter.filter(flights);
             }
         }
